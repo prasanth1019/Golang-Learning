@@ -31,6 +31,7 @@ func main(){
 
 for _, val := range app {
   fmt.Println(val)
+  
 }
 
 }
