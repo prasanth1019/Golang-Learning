@@ -1,0 +1,25 @@
+Nuser := ctx.Value(ctxUserName).(string)
+    fmt.Printf("************ ******** ******   %s", Nuser)
+
+
+
+
+func GetTestComponent() endpoint.Endpoint {
+  return func(ctx context.Context, request interface{}) (interface{}, error) {
+    blob := `{"results": [ { "gender": "male","email": "mohammed.vangrootheest@example.com"},{ "gender": "female","email": "mohammed.vangrootheest1@example.com"} ]}`
+    var resp []Result
+    err := json.Unmarshal([]byte(blob), &resp)
+    return TestIntfceResp{Test:resp}, nil
+  }
+}
+
+
+
+fmt.Println("GetTestComponent***");
+    // Nuser := ctx.Value(ctxUserName).(string)
+    // fmt.Printf("************ ******** ******   %s", Nuser)
+    blob := `{"results": [ { "gender": "male","email": "mohammed.vangrootheest@example.com"},{ "gender": "female","email": "mohammed.vangrootheest1@example.com"} ]}`
+    var resp []Result
+    err := json.Unmarshal([]byte(blob), &resp)
+    
+    return nil, err
